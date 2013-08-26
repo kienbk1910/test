@@ -17,13 +17,15 @@
              var result = navigator.network.connection.type;
              
              alert(result);
-             
              document.addEventListener("pause", onPause,false);
-             
+             document.addEventListener("backbutton", Backbutton,false);
              
 			};
         function OnPause(){
             aleart('Onpause event..');
+        }
+        function Backbutton(){
+            aleart('Backbutton event..');
         }
 		function init() {
 		document.addEventListener("deviceready", onDeviceReady, true);
@@ -31,28 +33,26 @@
 </script>
 </head>
 <body onload="init();" id="stage">
-     <div data-role="page" id="pagex">
-               <div data-role="content">
-                    <div id="logo">
-                        <img src="images/logo.gif" />
-                    </div>
-                    <div id="login">
-                     <form method="post" action="">
-                         <label for="account">Account</label>
-                         <input  type="text" id="account" name="account" data-mini="true"  />
-                         <label for="password">Password</label>
-                         <input  type="password" id="password" name="password" data-mini="true"  />
-                         <div id="submit">
-                         <input  type="submit" name="submit" value="Login" data-role="button"  />
-                         </div>
-                     </form>
-                     <div id="extend-info">
-                         <a href="#">Get new a Account </a><br />
-                         <a href="#">Forgot your password </a>
-                     </div>
-                    </div>
-               </div>
-        
+     <div data-role="page" id="page1">
+        <div data-role="content" id="mainbody">
+            <a href="#page1" data-role="button">Home</a>
+            <a href="#page2" data-role="button">page2</a>
+            <a href="#page3" data-role="button">page3</a>
         </div>
+     </div>
+      <div data-role="page" id="page2">
+        <div data-role="content" id="mainbody">
+            <a href="#page1" data-role="button">Home</a>
+            <a href="#page2" data-role="button">page2</a>
+            <a href="#page3" data-role="button">page3</a>
+        </div>
+     </div>
+      <div data-role="page" id="page3">
+        <div data-role="content" id="mainbody">
+            <a href="#page1" data-role="button">Home</a>
+            <a href="#page2" data-role="button">page2</a>
+            <a href="#page3" data-role="button">page3</a>
+        </div>
+     </div>
 </body>
 </html>
