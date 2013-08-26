@@ -14,10 +14,14 @@
 <script src="phonegap.js"></script>
 <script>
 		var onDeviceReady = function() {
-		navigator.splashscreen.hide();
-		var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
-		{maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
-		};
+		  var result = navigator.network.connection.type;
+           if(result == 'Connection.WIFI'){
+            alert("wifi");
+            
+           }else if(result == 'Connection.None'){
+              alert("not connected");
+           }
+			};
 		function onGeoSuccess(position) {
 		clat = position.coords.latitude;
 		clng = position.coords.longitude;
