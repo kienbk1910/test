@@ -22,13 +22,7 @@
               alert("not connected");
            }
 			};
-		function onGeoSuccess(position) {
-		clat = position.coords.latitude;
-		clng = position.coords.longitude;
-		alert(clat + “, “ + clng);
-		function onGeoError(error) {
-		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-		}
+	
 		function init() {
 		document.addEventListener("deviceready", onDeviceReady, true);
 		}
