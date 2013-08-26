@@ -14,31 +14,17 @@
 <script src="phonegap.js"></script>
 <script>
 		var onDeviceReady = function() {
-		  var result = navigator.network.connection.type;
-           if(result == 'Connection.WIFI'){
-            alert("wifi");
-            
-           }else if(result == 'Connection.NONE'){
-              alert("not connected");
-           }
-           else if(result == 'Connection.CELL_2G'){
-             alert("Connection.CELL_2G");
-           }
-           else if(result == 'Connection.CELL_3G'){
-             alert("Connection.CELL_3G");
-           } 
-           else if(result == 'Connection.CELL_4G'){
-             alert("Connection.CELL_4G");
-           }
-           else if(result == 'Connection.UNKNOWN'){
-             alert("Connection.UNKNOWN");
-           }
-           else if(result == 'Connection.ETHERNET'){
-             alert("Connection.ETHERNET");
-           }
+             var result = navigator.network.connection.type;
+             
              alert(result);
+             
+             document.addEventListener("pause", onPause,false);
+             
+             
 			};
-	
+        function OnPause(){
+            aleart('Onpause event..');
+        }
 		function init() {
 		document.addEventListener("deviceready", onDeviceReady, true);
 		}
