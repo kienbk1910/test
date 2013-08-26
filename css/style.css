@@ -1,0 +1,31 @@
+#logo{
+    width: 50%;
+    margin: 5px auto;
+}
+#logo img{
+    width:100%;
+}
+#login{
+    width:80%;
+   
+    margin: 30px auto;
+}
+#submit{
+    width:80%;
+    margin: 5px auto;    
+}
+#extend-info{
+    width:80%;
+    margin: 40px auto;    
+}
+.ui-li-thumb {
+    margin: 10px;
+}
+#image-detail{
+    width: 50%;
+    margin: 10px auto;
+    background-color: red;
+}
+#image-detail img{
+    width: 100%;
+}
