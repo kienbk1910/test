@@ -21,9 +21,22 @@
            }else if(result == 'Connection.NONE'){
               alert("not connected");
            }
-           else{
-            alert("???");
+           else if(result == 'Connection.CELL_2G'){
+             alert("Connection.CELL_2G");
            }
+           else if(result == 'Connection.CELL_3G'){
+             alert("Connection.CELL_3G");
+           } 
+           else if(result == 'Connection.CELL_4G'){
+             alert("Connection.CELL_4G");
+           }
+           else if(result == 'Connection.UNKNOWN'){
+             alert("Connection.UNKNOWN");
+           }
+           else if(result == 'Connection.ETHERNET'){
+             alert("Connection.ETHERNET");
+           }
+           
 			};
 	
 		function init() {
