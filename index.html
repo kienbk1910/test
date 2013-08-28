@@ -12,47 +12,24 @@
 <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
 <script src="phonegap.js"></script>
-<script>
-		var onDeviceReady = function() {
-             var result = navigator.network.connection.type;
-             
-             alert(result);
-             document.addEventListener("pause", onPause,false);
-             document.addEventListener("backbutton", backButton,false);
-             
-			};
-        function onPause(){
-            aleart('Onpause event..');
+        <script>
+              var onDeviceReady = function() {
+        navigator.splashscreen.hide();
+        var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
+        {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
+        };
+        function onGeoSuccess(position) {
+        clat = position.coords.latitude;
+        clng = position.coords.longitude;
+        alert(clat + “, “ + clng);
+        function onGeoError(error) {
+        alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
         }
-        function backButton(){
-            aleart('Backbutton event..');
-        }
-		function init() {
-		document.addEventListener("deviceready", onDeviceReady, true);
-		}
-</script>
+        function init() {
+        document.addEventListener("deviceready", onDeviceReady, true);
+        </script>
 </head>
 <body onload="init();" id="stage">
-     <div data-role="page" id="page1">
-        <div data-role="content" id="mainbody">
-            <a href="#page1" data-role="button">Home</a>
-            <a href="#page2" data-role="button">page2</a>
-            <a href="#page3" data-role="button">page3</a>
-        </div>
-     </div>
-      <div data-role="page" id="page2">
-        <div data-role="content" id="mainbody">
-            <a href="#page1" data-role="button">Home</a>
-            <a href="#page2" data-role="button">page2</a>
-            <a href="#page3" data-role="button">page3</a>
-        </div>
-     </div>
-      <div data-role="page" id="page3">
-        <div data-role="content" id="mainbody">
-            <a href="#page1" data-role="button">Home</a>
-            <a href="#page2" data-role="button">page2</a>
-            <a href="#page3" data-role="button">page3</a>
-        </div>
-     </div>
+    
 </body>
 </html>
