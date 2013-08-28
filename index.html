@@ -13,20 +13,22 @@
 
 <script src="phonegap.js"></script>
         <script>
-              var onDeviceReady = function() {
-        navigator.splashscreen.hide();
-        var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
-        {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
-        };
-        function onGeoSuccess(position) {
-        clat = position.coords.latitude;
-        clng = position.coords.longitude;
-        alert(clat + “, “ + clng);
-        function onGeoError(error) {
-        alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-        }
-        function init() {
-        document.addEventListener("deviceready", onDeviceReady, true);
+            var onDeviceReady = function() {
+            navigator.splashscreen.hide();
+            var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
+            {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
+            };
+            function onGeoSuccess(position) {
+                clat = position.coords.latitude;
+                clng = position.coords.longitude;
+                alert(clat + “, “ + clng);
+            }
+            function onGeoError(error) {
+            alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+            }
+            function init() {
+            document.addEventListener("deviceready", onDeviceReady, true);
+            }
         </script>
 </head>
 <body onload="init();" id="stage">
