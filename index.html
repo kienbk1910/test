@@ -17,24 +17,25 @@
 
 <script src="phonegap.js"></script>
         <script>
+            var clat;
+            var clng;
             var onDeviceReady = function() {
                     navigator.splashscreen.hide();
-                    position = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError );
+                  var  currentposition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError );
             };
           
             function init() {
                 document.addEventListener("deviceready", onDeviceReady, true);
             }
-            function onGeoSuccess() {
+            function onGeoSuccess(position) {
                 //alert("onGeoSuccess..");
                 clat = position.coords.latitude;
                 clng = position.coords.longitude;
-                $.initMap();
             }
-            $.initMap = function() {
+            $(doccument).ready(function(){
                 var latLng = new google.maps.LatLng(clat,clng);
-              $('#map_canvas').gmap({ 'center':latLng, 'zoom':15,'minZoom':10,'disableDefaultUI':true}
-            } 
+                $('#map_canvas').gmap('center': latLng, 'zoom':15, 'minZoom': 10,'disableDefaultUI': true);
+            });
     </script>
 </head>
 <body onload="init();" id="stage">
